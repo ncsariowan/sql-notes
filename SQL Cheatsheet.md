@@ -1,9 +1,31 @@
----
+<!DOCTYPE html>
+<html>
 
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQL Cheatsheet</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
 
----
+<body class="stackedit">
+  <div class="stackedit__left">
+    <div class="stackedit__toc">
+      
+<ul>
+<li><a href="#sql-cheatsheet">SQL Cheatsheet</a>
+<ul>
+<li><a href="#sql-keywords">SQL Keywords</a></li>
+<li><a href="#databases-notes">Databases Notes</a></li>
+</ul>
+</li>
+</ul>
 
-<h1 id="sql-cheatsheet">SQL Cheatsheet</h1>
+    </div>
+  </div>
+  <div class="stackedit__right">
+    <div class="stackedit__html">
+      <h1 id="sql-cheatsheet">SQL Cheatsheet</h1>
 <p>Gosh is Markdown so much better; I might start doing all my notes this way.<br>
 Written with <a href="https://stackedit.io/">StackEdit</a>.</p>
 <h2 id="sql-keywords">SQL Keywords</h2>
@@ -51,3 +73,8 @@ Written with <a href="https://stackedit.io/">StackEdit</a>.</p>
 <strong>Second Normal Form</strong>: Each field in a row should be fully dependent on a single key<br>
 <strong>Third Normal Form</strong>: all data in non-key columns should be independent of each other</p>
 
+    </div>
+  </div>
+</body>
+
+</html>
