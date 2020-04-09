@@ -115,7 +115,30 @@ MySQL Syntax<br>
 <td align="left">starts with ‘a’, ends with ‘o’</td>
 </tr>
 </tbody>
-</table><h2 id="databases-notes">Databases Notes</h2>
+</table><h3 id="in">In</h3>
+<p><code>SELECT column1, column2 ... FROM table1 WHERE columnN IN (value1, value2 ...)</code><br>
+<code>SELECT column1, column2 ... FROM table1 WHERE columnN IN (SELECT statement)</code></p>
+<h3 id="between">Between</h3>
+<p><code>SELECT column1, column2 ... FROM table1 WHERE columnN BETWEEN value1 AND value2</code></p>
+<h3 id="as-aliases">As (Aliases)</h3>
+<p><code>SELECT column1 AS alias FROM table1</code></p>
+<h3 id="joins">Joins</h3>
+<p><code>SELECT table1.columnA, table2.columnB, ... FROM table1 JOIN table2 ON table1.columnN=table2.columnN</code></p>
+<h4 id="inner-joins">Inner Joins</h4>
+<p>Only entries with matching values<br>
+<code>SELECT table1.columnA, table2.columnB, ... FROM table1 INNER JOIN table2 ON table1.columnN=table2.columnN</code></p>
+<h4 id="left-joins">Left Joins</h4>
+<p>Everything on left table plus matching values entries from right table joined<br>
+<code>SELECT table1.columnA, table2.columnB, ... FROM table1 LEFT JOIN table2 ON table1.columnN=table2.columnN</code></p>
+<h4 id="left-joins-1">Left Joins</h4>
+<p>Everything on right table plus matching values entries from left table joined<br>
+<code>SELECT table1.columnA, table2.columnB, ... FROM table1 RIGHT JOIN table2 ON table1.columnN=table2.columnN</code></p>
+<h4 id="full-joins">Full Joins</h4>
+<p>Everything is joined<br>
+<code>SELECT table1.columnA, table2.columnB, ... FROM table1 RIGHT JOIN table2 ON table1.columnN=table2.columnN</code></p>
+<h4 id="self-joins">Self Joins</h4>
+<p><code>SELECT table1.columnA, table2.columnB, ... FROM table1 T1, table2 T2 WHERE condition</code></p>
+<h2 id="databases-notes">Databases Notes</h2>
 <h3 id="relational-database-management-system-rdbms">Relational Database Management System (RDBMS)</h3>
 <p><strong>Record</strong> = <strong>Entry</strong> = <strong>Row</strong><br>
 <strong>Unique Key</strong>: Each value must be unique<br>
