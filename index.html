@@ -29,6 +29,7 @@
 <p>By Nathan Sariowan</p>
 <p>Gosh is Markdown so much better than Google Docs; I might start doing all my notes this way.<br>
 Written with <a href="https://stackedit.io/">StackEdit</a>.</p>
+<p>Based on a tutorial by <a href="https://www.w3schools.com/sql/">w3schools</a>.</p>
 <h2 id="sql-keywords">SQL Keywords</h2>
 <h3 id="select">Select</h3>
 <p><code>SELECT column1, column2… FROM table1</code><br>
@@ -38,7 +39,8 @@ Written with <a href="https://stackedit.io/">StackEdit</a>.</p>
 <p><code>SELECT DISTINCT column1, column2… FROM table1</code></p>
 <p><code>SELECT COUNT(DISTINCT column1) FROM table1</code></p>
 <h3 id="where">Where</h3>
-<p><code>SELECT column1 FROM table1 WHERE conditional1</code></p>
+<p>Qualify selects with a conditional.</p>
+<p><code>SELECT column1 FROM table1 WHERE conditional</code></p>
 <p>Ex:<br>
 <code>SELECT * FROM table1 WHERE column1='something'</code><br>
 <code>SELECT * FROM table1 WHERE column1 BETWEEN 0 AND 60</code><br>
@@ -48,22 +50,72 @@ Written with <a href="https://stackedit.io/">StackEdit</a>.</p>
 <h3 id="and-or-and-not">And, Or and Not</h3>
 <p><code>SELECT * FROM table1 WHERE conditional1 AND conditional2 AND ...</code><br>
 <code>SELECT * FROM table1 WHERE conditional1 OR conditional2 OR...</code><br>
-<code>SELECT * FROM table1 WHERE NOT conditional1</code></p>
+<code>SELECT * FROM table1 WHERE NOT conditional</code></p>
 <h3 id="order-by">Order By</h3>
 <p><code>SELECT column1, column2 ... FROM table1 ORDER BY column1, column2 ... ASC|DESC</code></p>
 <h3 id="insert-into">Insert Into</h3>
-<p><code>INSERT INTO table1 (column1, column2, ...) VALUES (value1, value2, ...)</code></p>
+<p><code>INSERT INTO table1 ( `column1`, `column2`, ...) VALUES ("value1", "value2", ...)</code></p>
 <h3 id="is-null-and-is-not-null">Is Null and Is Not Null</h3>
 <p><code>SELECT column1, column2... FROM table1 WHERE column1 IS NULL</code><br>
 <code>SELECT column1, column2... FROM table1 WHERE column1 IS NOT NULL</code></p>
 <h3 id="update">Update</h3>
-<p><code>UPDATE table1 SET column1 = value1, column2 = value2, ... WHERE conditional1</code></p>
+<p><code>UPDATE table1 SET column1 = value1, column2 = value2, ... WHERE conditional</code></p>
 <h3 id="delete">Delete</h3>
 <p><code>DELETE FROM table1 WHERE conditional1</code></p>
 <h3 id="top-and-limit">Top and Limit</h3>
+<p>Select a specified number of entries</p>
 <p>SQL Server / MS Access Syntax:<br>
-`SELECT TOP</p>
-<h2 id="databases-notes">Databases Notes</h2>
+<code>SELECT TOP number|percent column1, column 2 ... FROM table1 WHERE conditional</code><br>
+MySQL Syntax<br>
+<code>SELECT column1, column 2.. FROM table1 WHERE condition LIMIT number</code></p>
+<p><code>SELECT TOP number PERCENT column1, column2 ... FROM table1</code></p>
+<p>Protip: add a <code>WHERE</code> clause to the end of these!</p>
+<h3 id="min-and-max">Min and Max</h3>
+<p><code>SELECT MIN(column1) FROM table1</code> (<code>WHERE conditional</code>)<br>
+<code>SELECT MAX(column1) FROM table1</code> (<code>WHERE conditional</code>)</p>
+<h3 id="count-average-and-sum">Count, Average and Sum</h3>
+<p><code>SELECT COUNT(column1) FROM table1</code> (<code>WHERE conditional</code>)<br>
+<code>SELECT AVG(column1) FROM table1</code> (<code>WHERE conditional</code>)<br>
+<code>SELECT SUM(column1) FROM table1</code> (<code>WHERE conditional</code>)</p>
+<h3 id="like">Like</h3>
+<p><code>SELECT column1, column2 ... FROM table1 WHERE columnN LIKE pattern</code></p>
+<p><code>%</code> - zero, one, or multiple chars<br>
+<code>_</code> - single char</p>
+
+<table>
+<thead>
+<tr>
+<th>LIKE Operator</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>'a%'</code></td>
+<td align="left">starts with ‘a’</td>
+</tr>
+<tr>
+<td><code>'%a'</code></td>
+<td align="left">ends with ‘a’</td>
+</tr>
+<tr>
+<td><code>'%or%'</code></td>
+<td align="left">has ‘or’ in any position</td>
+</tr>
+<tr>
+<td><code>'_r%'</code></td>
+<td align="left">has ‘r’ in second position</td>
+</tr>
+<tr>
+<td><code>'a__%'</code></td>
+<td align="left">starts with ‘a’, at least three chars in length</td>
+</tr>
+<tr>
+<td><code>'a%o'</code></td>
+<td align="left">starts with ‘a’, ends with ‘o’</td>
+</tr>
+</tbody>
+</table><h2 id="databases-notes">Databases Notes</h2>
 <h3 id="relational-database-management-system-rdbms">Relational Database Management System (RDBMS)</h3>
 <p><strong>Record</strong> = <strong>Entry</strong> = <strong>Row</strong><br>
 <strong>Unique Key</strong>: Each value must be unique<br>
